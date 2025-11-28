@@ -8,6 +8,9 @@ services:
     restart: unless-stopped
     expose:
       - "3333"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.services.app.loadbalancer.server.port=3333"
     environment:
       - NODE_ENV=production
       - HOST=0.0.0.0
