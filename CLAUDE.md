@@ -12,6 +12,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `node ace migration:run` - Run database migrations
 - `node ace migration:rollback` - Rollback last migration
 - `node ace migration:fresh` - Drop all tables and re-run migrations
+- `node ace db:seed --files=database/seeders/production_backup_seeder.ts` - Restore production data with all images
 
 ### Core Commands
 
@@ -212,6 +213,12 @@ node ace migration:run --force
 
 # Run seeds (if any)
 node ace db:seed
+
+# Restore production data (services, pages, testimonials, footer)
+node ace db:seed --files=database/seeders/production_backup_seeder.ts
+
+# Full reset with production data
+node ace migration:fresh --force && node ace db:seed --files=database/seeders/production_backup_seeder.ts
 
 # Rollback migrations
 node ace migration:rollback
