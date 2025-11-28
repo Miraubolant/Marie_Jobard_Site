@@ -21,9 +21,8 @@ import FooterSetting from '#models/footer_setting'
 export default class ProductionBackupSeeder extends BaseSeeder {
   async run() {
     // ==========================================
-    // 1. SERVICES
+    // 1. SERVICES (Production data - 2025-11-29)
     // ==========================================
-    // TODO: Ajouter les données des services quand elles seront fournies
     await Service.createMany([
       {
         title: 'Référent Santé et Accueil Inclusif (RSAI)',
@@ -32,7 +31,7 @@ export default class ProductionBackupSeeder extends BaseSeeder {
         shortDescription: "Accompagnement réglementaire obligatoire pour tous les établissements d'accueil non permanent",
         price: null,
         priceLabel: null,
-        imagePath: '/images/preview.png',
+        imagePath: '/uploads/services/hncnm3oz8noilea8jj13tls7.png',
         displayOrder: 1,
         isActive: true,
       },
@@ -43,7 +42,7 @@ export default class ProductionBackupSeeder extends BaseSeeder {
         shortDescription: 'Formations adaptées aux besoins de votre équipe et de votre structure',
         price: null,
         priceLabel: null,
-        imagePath: '/images/preview.png',
+        imagePath: '/uploads/services/mc040q62f3owo92wcwp1oqbq.png',
         displayOrder: 2,
         isActive: true,
       },
@@ -54,18 +53,18 @@ export default class ProductionBackupSeeder extends BaseSeeder {
         shortDescription: 'Soutien aux parents au sein de votre établissement pour renforcer le lien famille-crèche',
         price: null,
         priceLabel: null,
-        imagePath: '/images/preview.png',
+        imagePath: '/uploads/services/peyjrvnuy59vh45por3jo4w7.png',
         displayOrder: 3,
         isActive: true,
       },
       {
-        title: 'Accompagnement à la parentalité',
+        title: 'Soutien personnalisé pour les parents',
         description:
           "Soutien personnalisé pour les parents dans leur quotidien avec leur enfant.\n\nConseil en développement\nGestion du sommeil\nAlimentation\nÉveil et stimulation",
         shortDescription: 'Soutien personnalisé pour les parents dans leur quotidien avec leur enfant',
         price: null,
         priceLabel: null,
-        imagePath: '/images/preview.png',
+        imagePath: '/uploads/services/jbzqoxjp3dhybcsrkijiibev.png',
         displayOrder: 4,
         isActive: true,
       },
@@ -76,7 +75,7 @@ export default class ProductionBackupSeeder extends BaseSeeder {
         shortDescription: 'Ateliers collectifs pour échanger et apprendre ensemble',
         price: null,
         priceLabel: null,
-        imagePath: '/images/preview.png',
+        imagePath: '/uploads/services/a8x2whjc016yey4w2mf3tx9n.png',
         displayOrder: 5,
         isActive: true,
       },
