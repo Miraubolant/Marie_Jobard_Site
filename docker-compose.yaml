@@ -4,6 +4,11 @@ services:
       context: .
       dockerfile: Dockerfile
     restart: unless-stopped
+    expose:
+      - "3333"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.services.app.loadbalancer.server.port=3333"
     environment:
       - SERVICE_FQDN_APP_3333
       - NODE_ENV=production
