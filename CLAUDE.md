@@ -154,3 +154,78 @@ Migrations are version-controlled database schema changes. They:
 This project includes 2 migrations:
 1. `create_users_table` - Creates the users table with email, password, name fields
 2. `create_remember_me_tokens_table` - Creates tokens for "remember me" functionality
+
+## Coolify Deployment
+
+This project is configured for deployment on Coolify (self-hosted PaaS).
+
+### Deployment Method: Dockerfile
+
+The project uses a multi-stage Dockerfile for optimized production builds:
+- **Base**: Node.js 22 Alpine with pnpm
+- **Deps**: Install dependencies
+- **Builder**: Build the application with `node ace build --ignore-ts-errors`
+- **Runner**: Production image with only built files
+
+### Coolify Setup
+
+1. **Create PostgreSQL Database**:
+   - Resources → New → Database → PostgreSQL 16
+   - Start the database
+   - Get the internal IP: Terminal → `hostname -i`
+
+2. **Create Application**:
+   - Resources → New → Application
+   - Source: GitHub repository
+   - Build Pack: **Dockerfile**
+   - Port Exposes: **3333**
+
+3. **Environment Variables**:
+   ```
+   NODE_ENV=production
+   APP_ENV=production
+   HOST=0.0.0.0
+   PORT=3333
+   APP_KEY=<generate with: node ace generate:key>
+   DB_HOST=<PostgreSQL internal IP from step 1>
+   DB_PORT=5432
+   DB_USER=postgres
+   DB_PASSWORD=<coolify generated password>
+   DB_DATABASE=postgres
+   DATABASE_CONNECTION=pg
+   SESSION_DRIVER=cookie
+   LOG_LEVEL=info
+   TZ=UTC
+   VITE_APP_NAME=<App Name>
+   VITE_BACKEND_URL=/api/
+   ```
+
+4. **Configure Domain**: Add your domain in the Domains tab
+
+5. **Deploy**: Click Redeploy
+
+### Post-Deployment Commands (via Coolify Terminal)
+
+```bash
+# Run migrations
+node ace migration:run --force
+
+# Run seeds (if any)
+node ace db:seed
+
+# Rollback migrations
+node ace migration:rollback
+
+# Fresh migration (drop all + re-run)
+node ace migration:fresh --force
+```
+
+### Network Configuration
+
+- Use the **internal IP** of PostgreSQL (found via `hostname -i` in DB terminal)
+- Both services communicate over Docker's internal network (secure, not exposed)
+- Domain and SSL are managed automatically by Coolify via Traefik
+
+### Production URL
+
+- **Domain**: https://mariejobard.miraubolant.com/
