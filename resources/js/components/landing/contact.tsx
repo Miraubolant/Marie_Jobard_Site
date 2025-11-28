@@ -91,7 +91,7 @@ export function Contact() {
               </CardHeader>
               <CardContent className="space-y-4 px-5 pb-5">
                 <div className="flex items-center gap-4 p-4 rounded-xl bg-gradient-to-br from-pastel-peach/30 to-transparent hover:from-pastel-peach/50 transition-all">
-                  <div className="flex-shrink-0 w-24 h-24 rounded-full border-4 border-white shadow-xl overflow-hidden">
+                  <div className="flex-shrink-0 w-16 h-16 rounded-full border-3 border-white shadow-lg overflow-hidden">
                     <img
                       src="/images/telephone.png"
                       alt="Téléphone"
@@ -110,7 +110,7 @@ export function Contact() {
                 </div>
 
                 <div className="flex items-center gap-4 p-4 rounded-xl bg-gradient-to-br from-pastel-rose/30 to-transparent hover:from-pastel-rose/50 transition-all">
-                  <div className="flex-shrink-0 w-24 h-24 rounded-full border-4 border-white shadow-xl overflow-hidden">
+                  <div className="flex-shrink-0 w-16 h-16 rounded-full border-3 border-white shadow-lg overflow-hidden">
                     <img
                       src="/images/email.png"
                       alt="Email"
@@ -129,7 +129,7 @@ export function Contact() {
                 </div>
 
                 <div className="flex items-center gap-4 p-4 rounded-xl bg-gradient-to-br from-pastel-lavender/30 to-transparent hover:from-pastel-lavender/50 transition-all">
-                  <div className="flex-shrink-0 w-24 h-24 rounded-full border-4 border-white shadow-xl overflow-hidden">
+                  <div className="flex-shrink-0 w-16 h-16 rounded-full border-3 border-white shadow-lg overflow-hidden">
                     <img
                       src="/images/itineraire.png"
                       alt="Zone d'intervention"
