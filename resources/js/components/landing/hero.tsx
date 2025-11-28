@@ -69,8 +69,8 @@ export function Hero({ data }: HeroProps) {
           {/* Left Column - Content */}
           <div className="space-y-8 lg:pr-8">
             {/* Main Title */}
-            <div className="scroll-fade-up stagger-1 space-y-4 text-center lg:text-left">
-              <h1 className="font-sans text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
+            <div className="scroll-fade-up stagger-1 space-y-4 text-center">
+              <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl font-bold leading-tight">
                 <span className="text-neutral-800">Infirmière </span>
                 <span className="text-terracotta-dark">Puéricultrice</span>
               </h1>

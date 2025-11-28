@@ -29,8 +29,8 @@ export function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 flex justify-center">
-      <div className="header-glass max-w-5xl w-full mx-4 px-6">
-        <div className="flex items-center justify-between h-16">
+      <div className="header-glass max-w-6xl w-full mx-4 px-8">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <a
             href="#hero"
@@ -43,14 +43,14 @@ export function Header() {
             <img
               src="/images/logo.png"
               alt="Marie Jobard - Infirmière Puéricultrice"
-              className="h-10 w-10 object-contain transition-all group-hover:scale-110"
+              className="h-12 w-12 object-contain transition-all group-hover:scale-110"
             />
             <div>
-              <div className="font-serif text-lg sm:text-xl font-bold transition-colors leading-tight">
+              <div className="font-serif text-xl sm:text-2xl font-bold transition-colors leading-tight">
                 <span className="text-terracotta-dark group-hover:text-terracotta">Marie</span>
                 <span className="text-neutral-800 group-hover:text-terracotta-dark"> Jobard</span>
               </div>
-              <div className="text-xs sm:text-sm font-bold leading-tight">
+              <div className="text-sm sm:text-base font-bold leading-tight">
                 <span className="text-neutral-600">Infirmière </span>
                 <span className="text-terracotta-dark">Puéricultrice</span>
               </div>
@@ -67,7 +67,7 @@ export function Header() {
                   e.preventDefault()
                   scrollToSection(item.href)
                 }}
-                className="btn-handdrawn nav-link px-4 py-2 text-base font-bold text-neutral-700 hover:text-terracotta-dark transition-all relative after:absolute after:bottom-0.5 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-0.5 after:bg-terracotta-dark after:transition-all after:duration-300 hover:after:w-3/4"
+                className="btn-handdrawn nav-link px-5 py-2 text-lg font-bold text-neutral-700 hover:text-terracotta-dark transition-all relative after:absolute after:bottom-0.5 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-0.5 after:bg-terracotta-dark after:transition-all after:duration-300 hover:after:w-3/4"
               >
                 {item.label}
               </a>
@@ -78,7 +78,7 @@ export function Header() {
           <div className="hidden md:block">
             <Button
               onClick={() => scrollToSection('#contact')}
-              className="btn-handdrawn bg-terracotta hover:bg-terracotta-dark text-white font-bold text-sm px-4 py-2 shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 border-2 border-terracotta-dark"
+              className="btn-handdrawn bg-terracotta hover:bg-terracotta-dark text-white font-bold text-base px-5 py-2.5 shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 border-2 border-terracotta-dark"
             >
               Me contacter
             </Button>
