@@ -10,6 +10,8 @@ services:
       - "3333:3333"
     expose:
       - "3333"
+    labels:
+      - "traefik.http.services.app.loadbalancer.server.port=3333"
     environment:
       - NODE_ENV=production
       - HOST=0.0.0.0
