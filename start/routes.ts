@@ -113,3 +113,4 @@ router
     router.post('/logout', [SessionController, 'destroy']).as('logout')
   })
   .use([middleware.auth()])
+  .prefix('api/auth')
