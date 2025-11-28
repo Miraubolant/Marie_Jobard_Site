@@ -5,7 +5,7 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
 import { InputError } from '@/components/common/input-error'
-import { Mail, Phone, MapPin, CheckCircle2 } from 'lucide-react'
+import { CheckCircle2 } from 'lucide-react'
 import { FormEvent, useEffect, useState } from 'react'
 import type { SharedProps } from '@/types'
 
@@ -90,9 +90,13 @@ export function Contact() {
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4 px-5 pb-5">
-                <div className="flex items-start gap-4 p-4 rounded-xl bg-gradient-to-br from-pastel-peach/30 to-transparent hover:from-pastel-peach/50 transition-all">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-terracotta to-terracotta-dark flex items-center justify-center shadow-md">
-                    <Phone className="w-5 h-5 text-white" />
+                <div className="flex items-center gap-4 p-4 rounded-xl bg-gradient-to-br from-pastel-peach/30 to-transparent hover:from-pastel-peach/50 transition-all">
+                  <div className="flex-shrink-0 w-24 h-24 rounded-full border-4 border-white shadow-xl overflow-hidden">
+                    <img
+                      src="/images/telephone.png"
+                      alt="Téléphone"
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <div>
                     <h3 className="font-bold text-lg text-neutral-800 mb-1">Téléphone</h3>
@@ -105,9 +109,13 @@ export function Contact() {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4 p-4 rounded-xl bg-gradient-to-br from-pastel-rose/30 to-transparent hover:from-pastel-rose/50 transition-all">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-terracotta to-terracotta-dark flex items-center justify-center shadow-md">
-                    <Mail className="w-5 h-5 text-white" />
+                <div className="flex items-center gap-4 p-4 rounded-xl bg-gradient-to-br from-pastel-rose/30 to-transparent hover:from-pastel-rose/50 transition-all">
+                  <div className="flex-shrink-0 w-24 h-24 rounded-full border-4 border-white shadow-xl overflow-hidden">
+                    <img
+                      src="/images/email.png"
+                      alt="Email"
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <div>
                     <h3 className="font-bold text-lg text-neutral-800 mb-1">Email</h3>
@@ -120,9 +128,13 @@ export function Contact() {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4 p-4 rounded-xl bg-gradient-to-br from-pastel-lavender/30 to-transparent hover:from-pastel-lavender/50 transition-all">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-terracotta to-terracotta-dark flex items-center justify-center shadow-md">
-                    <MapPin className="w-5 h-5 text-white" />
+                <div className="flex items-center gap-4 p-4 rounded-xl bg-gradient-to-br from-pastel-lavender/30 to-transparent hover:from-pastel-lavender/50 transition-all">
+                  <div className="flex-shrink-0 w-24 h-24 rounded-full border-4 border-white shadow-xl overflow-hidden">
+                    <img
+                      src="/images/itineraire.png"
+                      alt="Zone d'intervention"
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <div>
                     <h3 className="font-bold text-lg text-neutral-800 mb-1">Zone d'intervention</h3>
