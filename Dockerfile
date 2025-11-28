@@ -43,6 +43,10 @@ COPY --from=builder /app/public ./public
 # Create uploads directory
 RUN mkdir -p public/uploads/pages public/uploads/services public/uploads/testimonials
 
+# Copy entrypoint script
+COPY docker-entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
+
 # Set environment variables
 ENV NODE_ENV=production
 ENV HOST=0.0.0.0
@@ -55,5 +59,5 @@ EXPOSE 3333
 HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
     CMD wget --no-verbose --tries=1 --spider http://localhost:3333/health || exit 1
 
-# Start the application
-CMD ["node", "build/bin/server.js"]
+# Start the application with migrations
+ENTRYPOINT ["docker-entrypoint.sh"]
