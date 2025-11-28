@@ -22,14 +22,22 @@ export const AuthLayout = ({
           <div className="items-left flex flex-col gap-4">
             <Link
               href="/"
-              className="flex items-center gap-3 self-center"
+              className="flex items-center gap-3 self-center group"
             >
-              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-terracotta to-terracotta-dark text-white font-serif text-4xl font-bold shadow-lg">
-                MJ
-              </div>
+              <img
+                src="/images/logo.png"
+                alt="Marie Jobard - Infirmière Puéricultrice"
+                className="h-16 w-16 object-contain transition-transform group-hover:scale-110"
+              />
               <div>
-                <p className="font-serif text-3xl font-bold text-neutral-800">Marie Jobard</p>
-                <p className="text-sm text-neutral-600 font-semibold">Infirmière Puéricultrice</p>
+                <p className="font-serif text-3xl font-bold">
+                  <span className="text-terracotta-dark group-hover:text-terracotta transition-colors">Marie</span>
+                  <span className="text-neutral-800 group-hover:text-terracotta-dark transition-colors"> Jobard</span>
+                </p>
+                <p className="text-sm font-semibold">
+                  <span className="text-neutral-600">Infirmière </span>
+                  <span className="text-terracotta-dark">Puéricultrice</span>
+                </p>
               </div>
             </Link>
             <div className="flex flex-col gap-6">

@@ -41,7 +41,7 @@ export default class SessionController {
       if (error instanceof errors.E_INVALID_CREDENTIALS) {
         // Flash error for Inertia
         session.flash('errors', {
-          email: 'These credentials do not match our records.',
+          email: 'Identifiants incorrects. Veuillez vérifier votre email et mot de passe.',
         })
 
         return response.redirect().back()
@@ -49,7 +49,7 @@ export default class SessionController {
 
       // Flash error for Inertia
       session.flash('errors', {
-        email: 'These credentials do not match our records.',
+        email: 'Une erreur est survenue. Veuillez réessayer.',
       })
 
       response.redirect().back()
@@ -61,7 +61,7 @@ export default class SessionController {
    */
   async destroy({ auth, response, session }: HttpContext) {
     await auth.use('web').logout()
-    session.flash('success', 'You have been logged out')
+    session.flash('success', 'Vous avez été déconnecté(e)')
     return response.redirect('/')
   }
 }

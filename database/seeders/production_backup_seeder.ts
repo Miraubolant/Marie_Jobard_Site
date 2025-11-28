@@ -1,4 +1,5 @@
 import { BaseSeeder } from '@adonisjs/lucid/seeders'
+import User from '#models/user'
 import Service from '#models/service'
 import PageContent from '#models/page_content'
 import Testimonial from '#models/testimonial'
@@ -20,6 +21,19 @@ import FooterSetting from '#models/footer_setting'
  */
 export default class ProductionBackupSeeder extends BaseSeeder {
   async run() {
+    // ==========================================
+    // 0. ADMIN USER
+    // ==========================================
+    await User.updateOrCreate(
+      { email: 'mariejobard33@gmail.com' },
+      {
+        name: 'Marie Jobard',
+        email: 'mariejobard33@gmail.com',
+        password: 'Aqsze188665!',
+        isAdmin: true,
+      }
+    )
+
     // ==========================================
     // 1. SERVICES (Production data - 2025-11-29)
     // ==========================================
