@@ -9,7 +9,8 @@ RUN corepack enable && corepack prepare pnpm@latest --activate
 # Copy package files
 COPY package.json pnpm-lock.yaml* package-lock.json* ./
 
-# Install dependencies
+# Install dependencies (ignore prepare script)
+RUN npm pkg delete scripts.prepare 2>/dev/null || true
 RUN if [ -f pnpm-lock.yaml ]; then pnpm install --frozen-lockfile; \
     elif [ -f package-lock.json ]; then npm ci; \
     else npm install; fi
@@ -25,16 +26,15 @@ FROM node:20-alpine AS production
 
 WORKDIR /app
 
-# Install pnpm
-RUN corepack enable && corepack prepare pnpm@latest --activate
-
 # Copy package files
 COPY package.json pnpm-lock.yaml* package-lock.json* ./
 
-# Install production dependencies only
-RUN if [ -f pnpm-lock.yaml ]; then pnpm install --prod --frozen-lockfile; \
-    elif [ -f package-lock.json ]; then npm ci --only=production; \
-    else npm install --only=production; fi
+# Install production dependencies only (ignore prepare script)
+RUN npm pkg delete scripts.prepare 2>/dev/null || true
+RUN if [ -f pnpm-lock.yaml ]; then \
+      corepack enable && corepack prepare pnpm@latest --activate && pnpm install --prod --frozen-lockfile; \
+    elif [ -f package-lock.json ]; then npm ci --omit=dev --ignore-scripts; \
+    else npm install --omit=dev --ignore-scripts; fi
 
 # Copy built application
 COPY --from=builder /app/build ./build
@@ -52,7 +52,7 @@ ENV PORT=3333
 EXPOSE 3333
 
 # Health check
-HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
     CMD wget --no-verbose --tries=1 --spider http://localhost:3333/health || exit 1
 
 # Start the application
