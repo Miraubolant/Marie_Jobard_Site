@@ -18,7 +18,7 @@ services:
       - DB_PORT=5432
       - DB_USER=${DB_USER:-postgres}
       - DB_PASSWORD=${DB_PASSWORD:-postgres}
-      - DB_DATABASE=${DB_DATABASE:-mariejobard}
+      - DB_DATABASE=${DB_DATABASE:-marie_jobard}
       - SESSION_DRIVER=cookie
       - TZ=Europe/Paris
       - LOG_LEVEL=info
@@ -40,11 +40,11 @@ services:
     environment:
       POSTGRES_USER: ${DB_USER:-postgres}
       POSTGRES_PASSWORD: ${DB_PASSWORD:-postgres}
-      POSTGRES_DB: ${DB_DATABASE:-mariejobard}
+      POSTGRES_DB: ${DB_DATABASE:-marie_jobard}
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-postgres} -d ${DB_DATABASE:-mariejobard}"]
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-postgres} -d ${DB_DATABASE:-marie_jobard}"]
       interval: 10s
       timeout: 5s
       retries: 5
