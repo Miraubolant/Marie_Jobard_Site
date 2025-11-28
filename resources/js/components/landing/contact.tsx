@@ -91,13 +91,11 @@ export function Contact() {
               </CardHeader>
               <CardContent className="space-y-4 px-5 pb-5">
                 <div className="flex items-center gap-4 p-4 rounded-xl bg-gradient-to-br from-pastel-peach/30 to-transparent hover:from-pastel-peach/50 transition-all">
-                  <div className="flex-shrink-0 w-16 h-16 rounded-full border-3 border-white shadow-lg overflow-hidden">
-                    <img
-                      src="/images/telephone.png"
-                      alt="Téléphone"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
+                  <img
+                    src="/images/telephone.png"
+                    alt="Téléphone"
+                    className="flex-shrink-0 w-16 h-16 object-contain"
+                  />
                   <div>
                     <h3 className="font-bold text-lg text-neutral-800 mb-1">Téléphone</h3>
                     <a
@@ -110,13 +108,11 @@ export function Contact() {
                 </div>
 
                 <div className="flex items-center gap-4 p-4 rounded-xl bg-gradient-to-br from-pastel-rose/30 to-transparent hover:from-pastel-rose/50 transition-all">
-                  <div className="flex-shrink-0 w-16 h-16 rounded-full border-3 border-white shadow-lg overflow-hidden">
-                    <img
-                      src="/images/email.png"
-                      alt="Email"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
+                  <img
+                    src="/images/email.png"
+                    alt="Email"
+                    className="flex-shrink-0 w-16 h-16 object-contain"
+                  />
                   <div>
                     <h3 className="font-bold text-lg text-neutral-800 mb-1">Email</h3>
                     <a
@@ -129,13 +125,11 @@ export function Contact() {
                 </div>
 
                 <div className="flex items-center gap-4 p-4 rounded-xl bg-gradient-to-br from-pastel-lavender/30 to-transparent hover:from-pastel-lavender/50 transition-all">
-                  <div className="flex-shrink-0 w-16 h-16 rounded-full border-3 border-white shadow-lg overflow-hidden">
-                    <img
-                      src="/images/itineraire.png"
-                      alt="Zone d'intervention"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
+                  <img
+                    src="/images/itineraire.png"
+                    alt="Zone d'intervention"
+                    className="flex-shrink-0 w-16 h-16 object-contain"
+                  />
                   <div>
                     <h3 className="font-bold text-lg text-neutral-800 mb-1">Zone d'intervention</h3>
                     <p className="text-base text-neutral-700 font-bold">
