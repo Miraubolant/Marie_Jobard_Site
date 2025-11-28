@@ -1,44 +1,6 @@
 import { Button } from '@/components/ui/button'
 import type { PageContent } from '@/types/models'
 
-// Icône Accompagnement - Mains qui se tiennent style doodle
-const HandsHeartIcon = ({ className }: { className?: string }) => (
-  <svg className={className} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M32 52c-2-2-12-10-14-16-2-6 2-12 8-12 3 0 5 2 6 3 1-1 3-3 6-3 6 0 10 6 8 12-2 6-12 14-14 16z"
-      stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="currentColor" fillOpacity="0.15"/>
-    <path d="M12 28c0-4 3-8 8-8 2 0 4 1 5 2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" opacity="0.7"/>
-    <path d="M52 28c0-4-3-8-8-8-2 0-4 1-5 2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" opacity="0.7"/>
-    <path d="M8 32c2-1 4-2 6-2M56 32c-2-1-4-2-6-2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeDasharray="4 3"/>
-  </svg>
-)
-
-// Icône Formation - Livre ouvert avec étoile style sketch
-const BookStarIcon = ({ className }: { className?: string }) => (
-  <svg className={className} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M8 14c0-2 2-4 4-4h16c2 0 4 2 4 4v36c0 2-2 4-4 4H12c-2 0-4-2-4-4V14z"
-      stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="currentColor" fillOpacity="0.1"/>
-    <path d="M32 14c0-2 2-4 4-4h16c2 0 4 2 4 4v36c0 2-2 4-4 4H36c-2 0-4-2-4-4V14z"
-      stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="currentColor" fillOpacity="0.1"/>
-    <path d="M32 10v44" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-    <path d="M14 22h10M14 28h8M14 34h10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" opacity="0.5"/>
-    <path d="M44 20l2 4 4 1-3 3 1 4-4-2-4 2 1-4-3-3 4-1 2-4z"
-      stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="currentColor" fillOpacity="0.3"/>
-  </svg>
-)
-
-// Icône Soutien - Famille/Parent-enfant style doodle
-const FamilyCareIcon = ({ className }: { className?: string }) => (
-  <svg className={className} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="24" cy="16" r="8" stroke="currentColor" strokeWidth="2.5" fill="currentColor" fillOpacity="0.15"/>
-    <path d="M24 24v6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/>
-    <path d="M12 56v-14c0-4 3-8 8-8h8c5 0 8 4 8 8v14" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-    <circle cx="46" cy="28" r="6" stroke="currentColor" strokeWidth="2" strokeDasharray="3 2" opacity="0.7"/>
-    <path d="M46 34v4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" opacity="0.7"/>
-    <path d="M38 56v-10c0-3 2-6 5-6h6c3 0 5 3 5 6v10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" opacity="0.7"/>
-    <path d="M30 42c4-2 8-2 12 0" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeDasharray="4 2"/>
-  </svg>
-)
-
 type HeroProps = {
   data: PageContent
 }
@@ -65,20 +27,20 @@ export function Hero({ data }: HeroProps) {
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-pastel-lavender/30 rounded-full blur-3xl -z-10" />
 
       <div className="container mx-auto px-4 max-w-7xl">
+        {/* Main Title - Centered above everything */}
+        <div className="scroll-fade-up stagger-1 space-y-4 text-center max-w-4xl mx-auto mb-16">
+          <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl font-bold leading-tight">
+            <span className="text-neutral-800">Infirmière </span>
+            <span className="text-terracotta-dark">Puéricultrice</span>
+          </h1>
+          <p className="text-2xl md:text-3xl text-neutral-600 font-medium leading-relaxed">
+            Accompagnement professionnel en crèche et soutien personnalisé à la parentalité
+          </p>
+        </div>
+
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Content */}
           <div className="space-y-8 lg:pr-8">
-            {/* Main Title */}
-            <div className="scroll-fade-up stagger-1 space-y-4 text-center">
-              <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl font-bold leading-tight">
-                <span className="text-neutral-800">Infirmière </span>
-                <span className="text-terracotta-dark">Puéricultrice</span>
-              </h1>
-              <p className="text-2xl md:text-3xl text-neutral-600 font-medium leading-relaxed">
-                Accompagnement professionnel en crèche et soutien personnalisé à la parentalité
-              </p>
-            </div>
-
             {/* Mobile Image - displayed after title on mobile only */}
             <div className="scroll-fade-up lg:hidden">
               {data.imagePath ? (
@@ -97,30 +59,48 @@ export function Hero({ data }: HeroProps) {
             {/* Key Services Cards */}
             <div className="grid sm:grid-cols-3 gap-4 py-4">
               <div className="scroll-fade-up stagger-1 rounded-2xl p-5 border-2 border-terracotta/30 hover:border-terracotta hover:shadow-lg transition-all" style={{ backgroundColor: '#faf8f5' }}>
-                <HandsHeartIcon className="w-12 h-12 text-terracotta-dark mb-3" />
+                <div className="w-16 h-16 rounded-full border-3 border-white shadow-lg overflow-hidden mb-3">
+                  <img
+                    src="/images/accompagnement.png"
+                    alt="Accompagnement"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
                 <h3 className="font-bold text-xl text-neutral-800 mb-1">Accompagnement</h3>
                 <p className="text-base text-neutral-600">Suivi personnalisé</p>
               </div>
               <div className="scroll-fade-up stagger-2 rounded-2xl p-5 border-2 border-terracotta/30 hover:border-terracotta hover:shadow-lg transition-all" style={{ backgroundColor: '#faf8f5' }}>
-                <BookStarIcon className="w-12 h-12 text-terracotta-dark mb-3" />
+                <div className="w-16 h-16 rounded-full border-3 border-white shadow-lg overflow-hidden mb-3">
+                  <img
+                    src="/images/formation.png"
+                    alt="Formation"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
                 <h3 className="font-bold text-xl text-neutral-800 mb-1">Formation</h3>
                 <p className="text-base text-neutral-600">Équipes & structures</p>
               </div>
               <div className="scroll-fade-up stagger-3 rounded-2xl p-5 border-2 border-terracotta/30 hover:border-terracotta hover:shadow-lg transition-all" style={{ backgroundColor: '#faf8f5' }}>
-                <FamilyCareIcon className="w-12 h-12 text-terracotta-dark mb-3" />
+                <div className="w-16 h-16 rounded-full border-3 border-white shadow-lg overflow-hidden mb-3">
+                  <img
+                    src="/images/soutien.png"
+                    alt="Soutien"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
                 <h3 className="font-bold text-xl text-neutral-800 mb-1">Soutien</h3>
                 <p className="text-base text-neutral-600">Parentalité</p>
               </div>
             </div>
 
             {/* Description */}
-            <p className="scroll-fade-up stagger-2 text-xl md:text-2xl text-neutral-700 leading-relaxed">
+            <p className="scroll-fade-up stagger-2 text-xl md:text-2xl text-neutral-700 leading-relaxed text-center lg:text-left">
               Spécialisée dans la santé, le développement et l'inclusion des enfants en crèche.
               Je propose des formations sur-mesure pour les professionnels et un accompagnement bienveillant pour les parents.
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+            <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center lg:justify-start">
               {data.metadata?.ctaText && (
                 <Button
                   size="lg"
