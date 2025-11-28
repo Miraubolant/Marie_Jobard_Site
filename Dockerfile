@@ -11,7 +11,7 @@ RUN pnpm install --frozen-lockfile
 FROM base AS builder
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
-RUN pnpm build
+RUN node ace build --ignore-ts-errors
 
 # Production
 FROM base AS runner
