@@ -62,6 +62,8 @@ export default class SessionController {
   async destroy({ auth, response, session }: HttpContext) {
     await auth.use('web').logout()
     session.flash('success', 'Vous avez été déconnecté(e)')
-    return response.redirect('/')
+
+    // Force full page reload to clear Inertia cache
+    return response.header('X-Inertia-Location', '/').redirect('/')
   }
 }
