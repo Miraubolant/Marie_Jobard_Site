@@ -1,0 +1,44 @@
+# Dependencies
+node_modules/
+
+# Build output (will be created during build)
+build/
+
+# Development files
+.git/
+.gitignore
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Testing
+coverage/
+tests/
+
+# Documentation
+docs/
+*.md
+!README.md
+
+# Misc
+.DS_Store
+Thumbs.db
+*.tmp
+tmp/
+
+# Docker
+Dockerfile
+docker-compose*.yml
+.dockerignore
