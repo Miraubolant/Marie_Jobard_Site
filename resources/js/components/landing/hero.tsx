@@ -144,19 +144,6 @@ export function Hero({ data }: HeroProps) {
                 </div>
               )}
 
-              {/* Floating Badge */}
-              <div className="absolute -bottom-4 -left-4 md:-bottom-6 md:-left-6 bg-white rounded-2xl shadow-xl p-3 md:p-4 border border-neutral-100 hidden sm:block">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gradient-to-br from-terracotta to-terracotta-dark flex items-center justify-center">
-                    <Heart className="w-5 h-5 md:w-6 md:h-6 text-white" />
-                  </div>
-                  <div>
-                    <p className="text-xl md:text-2xl font-bold text-neutral-800">100%</p>
-                    <p className="text-xs md:text-sm text-neutral-600">Satisfaction</p>
-                  </div>
-                </div>
-              </div>
-
               {/* Floating Badge Top Right */}
               <div className="absolute -top-2 -right-2 md:-top-4 md:-right-4 bg-gradient-to-br from-terracotta to-terracotta-dark text-white rounded-full px-3 py-1.5 md:px-4 md:py-2 shadow-lg hidden sm:block">
                 <p className="text-xs md:text-sm font-bold">RSAI Certifiée</p>
