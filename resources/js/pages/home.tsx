@@ -4,6 +4,7 @@ import { Header } from '@/components/landing/header'
 import { Hero } from '@/components/landing/hero'
 import { About } from '@/components/landing/about'
 import { Services } from '@/components/landing/services'
+import { Rsai } from '@/components/landing/rsai'
 import { Testimonials } from '@/components/landing/testimonials'
 import { Contact } from '@/components/landing/contact'
 import { Footer } from '@/components/landing/footer'
@@ -29,6 +30,7 @@ export default function Home({ hero, about, services, testimonials, footerSettin
         {hero && <Hero data={hero} />}
         {about && <About data={about} />}
         {services.length > 0 && <Services services={services} />}
+        <Rsai />
         {testimonials.length > 0 && <Testimonials testimonials={testimonials} />}
         <Contact />
         <Footer footerSettings={footerSettings} />

@@ -9,6 +9,7 @@ export function Header() {
     { label: 'Accueil', href: '#hero' },
     { label: 'À propos', href: '#about' },
     { label: 'Services', href: '#services' },
+    { label: 'RSAI', href: '#rsai' },
     { label: 'Contact', href: '#contact' },
   ]
 
