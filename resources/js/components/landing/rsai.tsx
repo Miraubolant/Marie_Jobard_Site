@@ -103,13 +103,14 @@ export function Rsai({ data }: RsaiProps) {
 
         {/* Missions FAQ */}
         <div className="max-w-4xl mx-auto">
-          <div className="scroll-fade-up mb-8">
-            <h3 className="text-2xl md:text-3xl font-bold text-neutral-800 mb-2 flex items-center gap-3">
-              <span className="w-2 h-8 bg-terracotta-dark rounded-full"></span>
-              Les missions selon le décret
-            </h3>
-            <p className="text-neutral-600 ml-5">Découvrez les différentes missions du Référent Santé et Accueil Inclusif</p>
-          </div>
+          <div className="scroll-fade-up">
+            <div className="mb-8">
+              <h3 className="text-2xl md:text-3xl font-bold text-neutral-800 mb-2 flex items-center gap-3">
+                <span className="w-2 h-8 bg-terracotta-dark rounded-full"></span>
+                Les missions selon le décret
+              </h3>
+              <p className="text-neutral-600 ml-5">Découvrez les différentes missions du Référent Santé et Accueil Inclusif</p>
+            </div>
 
           <div className="space-y-3">
             {missions.map((mission, index) => {
@@ -119,7 +120,7 @@ export function Rsai({ data }: RsaiProps) {
               return (
                 <div
                   key={index}
-                  className={`scroll-fade-up stagger-${(index % 3) + 1} rounded-2xl border-2 transition-all duration-300 ${
+                  className={`rounded-2xl border-2 transition-all duration-300 ${
                     isOpen
                       ? 'border-terracotta bg-white shadow-lg'
                       : 'border-terracotta/20 bg-white/60 hover:border-terracotta/40 hover:bg-white/80'
@@ -152,6 +153,7 @@ export function Rsai({ data }: RsaiProps) {
                 </div>
               )
             })}
+          </div>
           </div>
         </div>
 
