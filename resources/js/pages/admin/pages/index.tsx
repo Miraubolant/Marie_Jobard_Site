@@ -14,6 +14,7 @@ export default function PagesIndex({ sections }: PagesIndexProps) {
     const labels: Record<string, string> = {
       hero: 'Section Hero (Accueil)',
       about: 'Section À Propos',
+      rsai: 'Section RSAI',
     }
     return labels[key] || key
   }

@@ -12,9 +12,15 @@ export interface Service {
   updatedAt: string
 }
 
+export interface RsaiMission {
+  icon: string
+  title: string
+  description: string
+}
+
 export interface PageContent {
   id: number
-  sectionKey: 'hero' | 'about'
+  sectionKey: 'hero' | 'about' | 'rsai'
   title: string
   content: string
   imagePath: string | null

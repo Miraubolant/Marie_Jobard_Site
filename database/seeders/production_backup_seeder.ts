@@ -134,6 +134,66 @@ export default class ProductionBackupSeeder extends BaseSeeder {
       }
     )
 
+    // RSAI Section
+    await PageContent.updateOrCreate(
+      { sectionKey: 'rsai' },
+      {
+        sectionKey: 'rsai',
+        title: "Qu'est-ce que le RSAI ?",
+        content: "Je réponds aux missions spécifiées par le décret, mais également aux besoins des structures. Ensemble, nous déterminerons des interventions sur mesure.",
+        imagePath: null,
+        metadata: {
+          missions: [
+            {
+              icon: 'Users',
+              title: 'Informer, sensibiliser et conseiller',
+              description: "Accompagner les équipes et les familles dans la compréhension des enjeux de santé et de bien-être des enfants accueillis.",
+            },
+            {
+              icon: 'Heart',
+              title: 'Apporter son concours',
+              description: "Apporter son concours pour la mise en œuvre des mesures nécessaires à la bonne adaptation, au bien-être, au bon développement des enfants et au respect de leurs besoins dans l'établissement ou le service.",
+            },
+            {
+              icon: 'FileCheck',
+              title: 'Aider et accompagner',
+              description: "Pour un enfant dont l'état de santé le nécessite, aider et accompagner l'équipe de l'établissement ou du service dans la compréhension et la mise en œuvre d'un projet d'accueil individualisé élaboré par le médecin traitant de l'enfant en accord avec sa famille.",
+            },
+            {
+              icon: 'AlertTriangle',
+              title: 'Contribuer au repérage des enfants en danger',
+              description: "Contribuer, dans le cadre du dispositif départemental de traitement des informations préoccupantes, en coordination avec le référent technique ou le directeur de l'établissement, au repérage des enfants en danger ou en risque de l'être et à l'information sur les conduites à tenir.",
+            },
+            {
+              icon: 'Stethoscope',
+              title: 'Procéder à un examen',
+              description: "Procéder, lorsqu'il l'estime nécessaire pour l'exercice de ses missions et avec l'accord des titulaires de l'autorité parentale, à un examen de l'enfant afin d'envisager si nécessaire une orientation médicale.",
+            },
+            {
+              icon: 'BookOpen',
+              title: 'Présenter et expliquer',
+              description: "Présenter et expliquer aux professionnels chargés de l'encadrement des enfants les protocoles prévus par la réglementation.",
+            },
+            {
+              icon: 'Shield',
+              title: "Veiller à l'accueil inclusif",
+              description: "Veiller à la mise en place de toutes mesures nécessaires à l'accueil inclusif des enfants en situation de handicap, vivant avec une affection chronique, ou présentant tout problème de santé nécessitant un traitement ou une attention particulière.",
+            },
+            {
+              icon: 'Heart',
+              title: "Assurer des actions d'éducation",
+              description: "Assurer des actions d'éducation et de promotion de la santé auprès des professionnels, notamment en matière de recommandations nutritionnelles, d'activités physiques, de sommeil, d'exposition aux écrans et de santé environnementale.",
+            },
+            {
+              icon: 'ClipboardList',
+              title: "Contribuer à l'établissement de protocoles",
+              description: "Contribuer, en concertation avec le référent technique ou le directeur de l'établissement, à l'établissement des protocoles annexés au règlement de fonctionnement, et veiller à leur bonne compréhension par l'équipe.",
+            },
+          ],
+        },
+      }
+    )
+
     // ==========================================
     // 3. TESTIMONIALS
     // ==========================================
