@@ -162,22 +162,40 @@ export function Rsai({ data }: RsaiProps) {
           <p className="text-lg text-neutral-600 mb-4">
             Vous avez des questions sur le RSAI ou souhaitez en savoir plus ?
           </p>
-          <a
-            href="#contact"
-            onClick={(e) => {
-              e.preventDefault()
-              const element = document.querySelector('#contact')
-              if (element) {
-                const headerOffset = 80
-                const elementPosition = element.getBoundingClientRect().top
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset
-                window.scrollTo({ top: offsetPosition, behavior: 'smooth' })
-              }
-            }}
-            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-terracotta to-terracotta-dark hover:from-terracotta-dark hover:to-terracotta text-white font-bold text-lg rounded-2xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all"
-          >
-            Me contacter
-          </a>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a
+              href="#services"
+              onClick={(e) => {
+                e.preventDefault()
+                const element = document.querySelector('#services')
+                if (element) {
+                  const headerOffset = 80
+                  const elementPosition = element.getBoundingClientRect().top
+                  const offsetPosition = elementPosition + window.pageYOffset - headerOffset
+                  window.scrollTo({ top: offsetPosition, behavior: 'smooth' })
+                }
+              }}
+              className="inline-flex items-center gap-2 px-8 py-4 bg-white border-2 border-terracotta text-terracotta-dark hover:bg-terracotta/5 font-bold text-lg rounded-2xl shadow-lg hover:shadow-xl hover:scale-105 transition-all"
+            >
+              Voir mes tarifs
+            </a>
+            <a
+              href="#contact"
+              onClick={(e) => {
+                e.preventDefault()
+                const element = document.querySelector('#contact')
+                if (element) {
+                  const headerOffset = 80
+                  const elementPosition = element.getBoundingClientRect().top
+                  const offsetPosition = elementPosition + window.pageYOffset - headerOffset
+                  window.scrollTo({ top: offsetPosition, behavior: 'smooth' })
+                }
+              }}
+              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-terracotta to-terracotta-dark hover:from-terracotta-dark hover:to-terracotta text-white font-bold text-lg rounded-2xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all"
+            >
+              Me contacter
+            </a>
+          </div>
         </div>
       </div>
     </section>
