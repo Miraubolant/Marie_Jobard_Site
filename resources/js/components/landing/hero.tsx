@@ -60,7 +60,11 @@ export function Hero({ data }: HeroProps) {
               </div>
               <div className="flex items-center gap-2 px-3 py-2 bg-white/60 backdrop-blur-sm rounded-xl border border-neutral-200">
                 <Heart className="w-5 h-5 text-terracotta" />
-                <span className="text-sm font-medium text-neutral-700">+10 ans d'expérience</span>
+                <span className="text-sm font-medium text-neutral-700">+5 ans d'expérience</span>
+              </div>
+              <div className="flex items-center gap-2 px-3 py-2 bg-gradient-to-r from-terracotta to-terracotta-dark rounded-xl">
+                <Award className="w-5 h-5 text-white" />
+                <span className="text-sm font-medium text-white">RSAI Certifiée</span>
               </div>
             </div>
 
@@ -144,10 +148,6 @@ export function Hero({ data }: HeroProps) {
                 </div>
               )}
 
-              {/* Floating Badge Top Right */}
-              <div className="absolute -top-2 -right-2 md:-top-4 md:-right-4 bg-gradient-to-br from-terracotta to-terracotta-dark text-white rounded-full px-3 py-1.5 md:px-4 md:py-2 shadow-lg hidden sm:block">
-                <p className="text-xs md:text-sm font-bold">RSAI Certifiée</p>
-              </div>
             </div>
 
             {/* Mobile Services Cards */}
