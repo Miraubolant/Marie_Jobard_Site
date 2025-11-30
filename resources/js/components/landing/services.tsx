@@ -61,17 +61,17 @@ export function Services({ services }: ServicesProps) {
             {services.map((service, index) => (
               <div
                 key={service.id}
-                className={`scroll-scale stagger-${Math.min((index % 3) + 1, 3)} group`}
+                className={`scroll-scale stagger-${Math.min((index % 3) + 1, 3)} group h-full`}
               >
                 {/* Clickable card design */}
                 <div
                   onClick={() => setSelectedService(service)}
-                  className="relative rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-2 border-terracotta/20 hover:border-terracotta cursor-pointer"
+                  className="relative h-full flex flex-col rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-2 border-terracotta/20 hover:border-terracotta cursor-pointer"
                   style={{ backgroundColor: '#faf8f5' }}
                 >
                   {/* Image section */}
                   {service.imagePath && (
-                    <div className="relative h-40 overflow-hidden">
+                    <div className="relative h-40 flex-shrink-0 overflow-hidden">
                       <img
                         src={service.imagePath}
                         alt={service.title}
@@ -90,22 +90,22 @@ export function Services({ services }: ServicesProps) {
                   )}
 
                   {/* Content section */}
-                  <div className="p-5 space-y-3">
+                  <div className="p-5 flex flex-col flex-grow">
                     {/* Title */}
-                    <h3 className="text-lg md:text-xl font-bold text-neutral-800 leading-tight line-clamp-2">
+                    <h3 className="text-lg md:text-xl font-bold text-neutral-800 leading-tight line-clamp-2 min-h-[3.5rem]">
                       {service.title}
                     </h3>
 
                     {/* Description */}
-                    <p className="text-neutral-600 text-sm leading-relaxed line-clamp-3">
+                    <p className="text-neutral-600 text-sm leading-relaxed line-clamp-3 mt-3 min-h-[4.5rem]">
                       {service.shortDescription || service.description.substring(0, 100) + '...'}
                     </p>
 
                     {/* Tags */}
-                    <div className="flex flex-wrap gap-1.5">
+                    <div className="flex flex-wrap gap-1.5 mt-3">
                       <span className="inline-flex items-center gap-1 text-xs font-medium text-terracotta-dark bg-terracotta/10 px-2.5 py-1 rounded-full">
                         <MapPin className="w-3 h-3" />
-                        Bretagne
+                        Bordeaux
                       </span>
                       <span className="inline-flex items-center gap-1 text-xs font-medium text-terracotta-dark bg-terracotta/10 px-2.5 py-1 rounded-full">
                         <Heart className="w-3 h-3" />
@@ -113,8 +113,8 @@ export function Services({ services }: ServicesProps) {
                       </span>
                     </div>
 
-                    {/* Action button */}
-                    <div className="pt-2">
+                    {/* Action button - pushed to bottom */}
+                    <div className="pt-4 mt-auto">
                       <Button
                         onClick={(e) => {
                           e.stopPropagation()
@@ -184,7 +184,7 @@ export function Services({ services }: ServicesProps) {
                   <ul className="space-y-3 text-neutral-700">
                     <li className="flex items-start gap-3">
                       <span className="text-terracotta-dark mt-1 text-xl">•</span>
-                      <span className="flex-1">Intervention à domicile en Bretagne</span>
+                      <span className="flex-1">Intervention à domicile sur Bordeaux et agglomération</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <span className="text-terracotta-dark mt-1 text-xl">•</span>
