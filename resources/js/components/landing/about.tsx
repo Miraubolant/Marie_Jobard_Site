@@ -1,5 +1,6 @@
 import { Check } from 'lucide-react'
 import type { PageContent } from '@/types/models'
+import { OptimizedImage } from '@/components/common/optimized-image'
 
 type AboutProps = {
   data: PageContent
@@ -23,10 +24,10 @@ export function About({ data }: AboutProps) {
           {/* Image */}
           <div className="scroll-fade-left order-2 md:order-1">
             {data.imagePath ? (
-              <img
+              <OptimizedImage
                 src={data.imagePath}
                 alt={data.title}
-                className="w-full h-[400px] object-cover rounded-3xl shadow-xl"
+                className="w-full h-[400px] rounded-3xl shadow-xl"
               />
             ) : (
               <div className="w-full h-[400px] bg-gradient-to-br from-neutral-100 to-terracotta/10 rounded-3xl flex items-center justify-center">

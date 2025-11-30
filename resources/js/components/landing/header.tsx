@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Menu, X } from 'lucide-react'
+import { OptimizedImage } from '@/components/common/optimized-image'
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -41,10 +42,14 @@ export function Header() {
             }}
             className="group flex items-center gap-2"
           >
-            <img
+            <OptimizedImage
               src="/images/logo.png"
               alt="Marie Jobard - Infirmière Puéricultrice"
-              className="h-12 w-12 object-contain transition-all group-hover:scale-110"
+              priority={true}
+              width={48}
+              height={48}
+              objectFit="contain"
+              className="h-12 w-12 transition-all group-hover:scale-110"
             />
             <div>
               <div className="font-serif text-xl sm:text-2xl font-bold transition-colors leading-tight">

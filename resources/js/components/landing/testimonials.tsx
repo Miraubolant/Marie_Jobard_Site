@@ -1,6 +1,7 @@
 import { Card, CardContent } from '@/components/ui/card'
 import { Star } from 'lucide-react'
 import type { Testimonial } from '@/types/models'
+import { OptimizedImage } from '@/components/common/optimized-image'
 
 type TestimonialsProps = {
   testimonials: Testimonial[]
@@ -43,10 +44,12 @@ export function Testimonials({ testimonials }: TestimonialsProps) {
                 <div className="flex justify-center -mt-16 mb-4">
                   <div className="w-24 h-24 rounded-full border-4 border-white shadow-xl overflow-hidden bg-terracotta/10">
                     {testimonial.authorPhoto ? (
-                      <img
+                      <OptimizedImage
                         src={testimonial.authorPhoto}
                         alt={testimonial.authorName}
-                        className="w-full h-full object-cover"
+                        width={96}
+                        height={96}
+                        className="w-full h-full"
                       />
                     ) : (
                       <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-terracotta/20 to-pastel-rose/20">

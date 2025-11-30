@@ -9,6 +9,7 @@ import {
 } from '@/components/ui/dialog'
 import { X, MapPin, Heart } from 'lucide-react'
 import type { Service } from '@/types/models'
+import { OptimizedImage } from '@/components/common/optimized-image'
 
 type ServicesProps = {
   services: Service[]
@@ -72,10 +73,10 @@ export function Services({ services }: ServicesProps) {
                   {/* Image section */}
                   {service.imagePath && (
                     <div className="relative h-40 flex-shrink-0 overflow-hidden">
-                      <img
+                      <OptimizedImage
                         src={service.imagePath}
                         alt={service.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        className="w-full h-full group-hover:scale-105 transition-transform duration-500"
                       />
                       {/* Price badge */}
                       {service.price && (
@@ -158,10 +159,10 @@ export function Services({ services }: ServicesProps) {
               <div className="space-y-6 pt-4">
                 {selectedService.imagePath && (
                   <div className="w-full h-72 overflow-hidden rounded-2xl shadow-lg border-2 border-terracotta/20">
-                    <img
+                    <OptimizedImage
                       src={selectedService.imagePath}
                       alt={selectedService.title}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full"
                     />
                   </div>
                 )}

@@ -1,4 +1,5 @@
 import { Button } from '@/components/ui/button'
+import { OptimizedImage } from '@/components/common/optimized-image'
 import type { PageContent } from '@/types/models'
 import { ChevronDown, MapPin, Award, Heart } from 'lucide-react'
 
@@ -97,10 +98,12 @@ export function Hero({ data }: HeroProps) {
             <div className="scroll-fade-up stagger-4 hidden md:grid grid-cols-3 gap-4 pt-4">
               <div className="group rounded-2xl p-4 border-2 border-terracotta/20 hover:border-terracotta bg-white/60 backdrop-blur-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                 <div className="w-14 h-14 rounded-full border-2 border-white shadow-lg overflow-hidden mb-3 group-hover:scale-110 transition-transform">
-                  <img
+                  <OptimizedImage
                     src="/images/accompagnement.png"
                     alt="Accompagnement"
-                    className="w-full h-full object-cover"
+                    width={56}
+                    height={56}
+                    className="w-full h-full"
                   />
                 </div>
                 <h3 className="font-bold text-lg text-neutral-800 mb-1">Accompagnement</h3>
@@ -108,10 +111,12 @@ export function Hero({ data }: HeroProps) {
               </div>
               <div className="group rounded-2xl p-4 border-2 border-terracotta/20 hover:border-terracotta bg-white/60 backdrop-blur-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                 <div className="w-14 h-14 rounded-full border-2 border-white shadow-lg overflow-hidden mb-3 group-hover:scale-110 transition-transform">
-                  <img
+                  <OptimizedImage
                     src="/images/formation.png"
                     alt="Formation"
-                    className="w-full h-full object-cover"
+                    width={56}
+                    height={56}
+                    className="w-full h-full"
                   />
                 </div>
                 <h3 className="font-bold text-lg text-neutral-800 mb-1">Formation</h3>
@@ -119,10 +124,12 @@ export function Hero({ data }: HeroProps) {
               </div>
               <div className="group rounded-2xl p-4 border-2 border-terracotta/20 hover:border-terracotta bg-white/60 backdrop-blur-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                 <div className="w-14 h-14 rounded-full border-2 border-white shadow-lg overflow-hidden mb-3 group-hover:scale-110 transition-transform">
-                  <img
+                  <OptimizedImage
                     src="/images/soutien.png"
                     alt="Soutien"
-                    className="w-full h-full object-cover"
+                    width={56}
+                    height={56}
+                    className="w-full h-full"
                   />
                 </div>
                 <h3 className="font-bold text-lg text-neutral-800 mb-1">Soutien</h3>
@@ -139,10 +146,11 @@ export function Hero({ data }: HeroProps) {
 
               {/* Main Image */}
               {data.imagePath ? (
-                <img
+                <OptimizedImage
                   src={data.imagePath}
                   alt={data.title}
-                  className="w-full h-[280px] sm:h-[350px] md:h-[450px] lg:h-[550px] object-cover rounded-2xl md:rounded-3xl shadow-2xl"
+                  priority={true}
+                  className="w-full h-[280px] sm:h-[350px] md:h-[450px] lg:h-[550px] rounded-2xl md:rounded-3xl shadow-2xl"
                 />
               ) : (
                 <div className="w-full h-[280px] sm:h-[350px] md:h-[450px] lg:h-[550px] bg-gradient-to-br from-terracotta/20 to-pastel-rose/20 rounded-2xl md:rounded-3xl flex items-center justify-center border-2 border-terracotta/30">
@@ -156,19 +164,19 @@ export function Hero({ data }: HeroProps) {
             <div className="grid grid-cols-3 gap-2 mt-6 md:hidden">
               <div className="rounded-xl p-3 border border-terracotta/20 bg-white/80 backdrop-blur-sm text-center">
                 <div className="w-10 h-10 mx-auto rounded-full border-2 border-white shadow overflow-hidden mb-2">
-                  <img src="/images/accompagnement.png" alt="Accompagnement" className="w-full h-full object-cover" />
+                  <OptimizedImage src="/images/accompagnement.png" alt="Accompagnement" width={40} height={40} className="w-full h-full" />
                 </div>
                 <p className="text-xs font-bold text-neutral-800">Accompagnement</p>
               </div>
               <div className="rounded-xl p-3 border border-terracotta/20 bg-white/80 backdrop-blur-sm text-center">
                 <div className="w-10 h-10 mx-auto rounded-full border-2 border-white shadow overflow-hidden mb-2">
-                  <img src="/images/formation.png" alt="Formation" className="w-full h-full object-cover" />
+                  <OptimizedImage src="/images/formation.png" alt="Formation" width={40} height={40} className="w-full h-full" />
                 </div>
                 <p className="text-xs font-bold text-neutral-800">Formation</p>
               </div>
               <div className="rounded-xl p-3 border border-terracotta/20 bg-white/80 backdrop-blur-sm text-center">
                 <div className="w-10 h-10 mx-auto rounded-full border-2 border-white shadow overflow-hidden mb-2">
-                  <img src="/images/soutien.png" alt="Soutien" className="w-full h-full object-cover" />
+                  <OptimizedImage src="/images/soutien.png" alt="Soutien" width={40} height={40} className="w-full h-full" />
                 </div>
                 <p className="text-xs font-bold text-neutral-800">Soutien</p>
               </div>
