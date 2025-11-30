@@ -62,9 +62,9 @@ export function Hero({ data }: HeroProps) {
                 <Heart className="w-5 h-5 text-terracotta" />
                 <span className="text-sm font-medium text-neutral-700">+5 ans d'expérience</span>
               </div>
-              <div className="flex items-center gap-2 px-3 py-2 bg-gradient-to-r from-terracotta to-terracotta-dark rounded-xl">
-                <Award className="w-5 h-5 text-white" />
-                <span className="text-sm font-medium text-white">RSAI Certifiée</span>
+              <div className="flex items-center gap-2 px-3 py-2 bg-white/60 backdrop-blur-sm rounded-xl border border-neutral-200">
+                <Award className="w-5 h-5 text-terracotta" />
+                <span className="text-sm font-medium text-neutral-700">RSAI Certifiée</span>
               </div>
             </div>
 
