@@ -119,7 +119,7 @@ const LoginPage = ({ status, canResetPassword, auth, flash }: LoginProps) => {
 
             <Button
               type="submit"
-              className="btn-handdrawn mt-4 h-14 w-full bg-gradient-to-r from-terracotta to-terracotta-dark hover:from-terracotta-dark hover:to-terracotta text-white font-bold text-xl"
+              className="btn-handdrawn mt-4 h-14 w-full bg-terracotta hover:bg-terracotta-dark text-white font-bold text-xl shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 border-2 border-terracotta-dark"
               tabIndex={4}
               disabled={processing}
             >

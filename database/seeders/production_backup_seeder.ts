@@ -105,10 +105,15 @@ export default class ProductionBackupSeeder extends BaseSeeder {
       {
         sectionKey: 'hero',
         title: 'Marie Jobard - Infirmière Puéricultrice à Bordeaux',
-        content: "Bienvenue ! Je suis Marie Jobard, infirmière puéricultrice diplômée d'État. Passionnée par l'accompagnement à la parentalité, je vous aide à vivre sereinement les premiers mois avec votre bébé.",
+        content: 'Accompagnement professionnel en crèche et soutien personnalisé à la parentalité',
         imagePath: '/uploads/pages/offofe5qtaoy9z4luw7ab8w0.png',
         metadata: {
-          subtitle: 'Accompagnement personnalisé et bienveillant pour les jeunes parents',
+          location: 'Bordeaux et agglomération',
+          badges: [
+            { text: "Diplômée d'État" },
+            { text: "+5 ans d'expérience" },
+            { text: "RSAI Certifiée" },
+          ],
           ctaText: 'Découvrir mes services',
           ctaSecondary: 'Me contacter',
         },

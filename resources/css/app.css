@@ -223,7 +223,9 @@
 
   /* Header with cream background and brown border on all sides */
   .header-glass {
-    background-color: #faf8f5;
+    background-color: rgba(250, 248, 245, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     border: 2px solid #b68d7f;
     border-radius: 1rem;
     margin-top: 1rem;

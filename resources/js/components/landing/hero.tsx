@@ -23,11 +23,9 @@ export function Hero({ data }: HeroProps) {
 
   return (
     <section id="hero" className="relative min-h-[calc(100vh-80px)] flex items-center overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-cream via-pastel-peach/20 to-pastel-lavender/10 -z-20" />
-      <div className="absolute top-20 right-10 w-72 h-72 md:w-96 md:h-96 bg-pastel-rose/50 rounded-full blur-3xl -z-10 animate-pulse" />
-      <div className="absolute bottom-20 left-10 w-72 h-72 md:w-96 md:h-96 bg-pastel-lavender/40 rounded-full blur-3xl -z-10 animate-pulse" style={{ animationDelay: '1s' }} />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-terracotta/5 rounded-full blur-3xl -z-10" />
+      {/* Decorative elements */}
+      <div className="absolute top-20 right-10 w-72 h-72 md:w-96 md:h-96 bg-pastel-rose/30 rounded-full blur-3xl -z-10" />
+      <div className="absolute bottom-20 left-10 w-72 h-72 md:w-96 md:h-96 bg-pastel-lavender/20 rounded-full blur-3xl -z-10" />
 
       <div className="container mx-auto px-4 max-w-7xl py-8 md:py-16">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
@@ -36,7 +34,9 @@ export function Hero({ data }: HeroProps) {
             {/* Badge */}
             <div className="scroll-fade-up inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full border border-terracotta/20 shadow-sm">
               <MapPin className="w-4 h-4 text-terracotta" />
-              <span className="text-sm font-medium text-neutral-700">Bordeaux et agglomération</span>
+              <span className="text-sm font-medium text-neutral-700">
+                {data.metadata?.location || 'Bordeaux et agglomération'}
+              </span>
             </div>
 
             {/* Main Title */}
@@ -48,24 +48,26 @@ export function Hero({ data }: HeroProps) {
                 <span className="text-neutral-800"> Puéricultrice</span>
               </h1>
               <p className="text-lg sm:text-xl md:text-2xl text-neutral-600 font-medium leading-relaxed max-w-xl">
-                Accompagnement professionnel en crèche et soutien personnalisé à la parentalité
+                {data.content || 'Accompagnement professionnel en crèche et soutien personnalisé à la parentalité'}
               </p>
             </div>
 
             {/* Trust Badges */}
             <div className="scroll-fade-up stagger-2 flex flex-wrap gap-3 md:gap-4">
-              <div className="flex items-center gap-2 px-3 py-2 bg-white/60 backdrop-blur-sm rounded-xl border border-neutral-200">
-                <Award className="w-5 h-5 text-terracotta" />
-                <span className="text-sm font-medium text-neutral-700">Diplômée d'État</span>
-              </div>
-              <div className="flex items-center gap-2 px-3 py-2 bg-white/60 backdrop-blur-sm rounded-xl border border-neutral-200">
-                <Heart className="w-5 h-5 text-terracotta" />
-                <span className="text-sm font-medium text-neutral-700">+5 ans d'expérience</span>
-              </div>
-              <div className="flex items-center gap-2 px-3 py-2 bg-white/60 backdrop-blur-sm rounded-xl border border-neutral-200">
-                <Award className="w-5 h-5 text-terracotta" />
-                <span className="text-sm font-medium text-neutral-700">RSAI Certifiée</span>
-              </div>
+              {(data.metadata?.badges || [
+                { text: "Diplômée d'État" },
+                { text: "+5 ans d'expérience" },
+                { text: "RSAI Certifiée" },
+              ]).map((badge: { text: string }, index: number) => (
+                <div key={index} className="flex items-center gap-2 px-3 py-2 bg-white/60 backdrop-blur-sm rounded-xl border border-neutral-200">
+                  {index === 1 ? (
+                    <Heart className="w-5 h-5 text-terracotta" />
+                  ) : (
+                    <Award className="w-5 h-5 text-terracotta" />
+                  )}
+                  <span className="text-sm font-medium text-neutral-700">{badge.text}</span>
+                </div>
+              ))}
             </div>
 
             {/* CTA Buttons */}
@@ -74,7 +76,7 @@ export function Hero({ data }: HeroProps) {
                 <Button
                   size="lg"
                   onClick={() => scrollToSection('#services')}
-                  className="btn-handdrawn bg-gradient-to-r from-terracotta to-terracotta-dark hover:from-terracotta-dark hover:to-terracotta text-white font-bold text-lg md:text-xl px-6 md:px-8 py-5 md:py-6 shadow-xl hover:shadow-2xl hover:scale-105 transition-all"
+                  className="btn-handdrawn bg-terracotta hover:bg-terracotta-dark text-white font-bold text-lg md:text-xl px-6 md:px-8 py-5 md:py-6 shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 border-2 border-terracotta-dark"
                 >
                   {data.metadata.ctaText}
                 </Button>
@@ -84,7 +86,7 @@ export function Hero({ data }: HeroProps) {
                   size="lg"
                   variant="outline"
                   onClick={() => scrollToSection('#contact')}
-                  className="btn-handdrawn border-2 border-terracotta text-terracotta-dark hover:bg-terracotta hover:text-white font-bold text-lg md:text-xl px-6 md:px-8 py-5 md:py-6 hover:scale-105 transition-all"
+                  className="btn-handdrawn bg-white border-2 border-terracotta text-terracotta-dark hover:bg-terracotta hover:text-white font-bold text-lg md:text-xl px-6 md:px-8 py-5 md:py-6 shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105"
                 >
                   {data.metadata.ctaSecondary}
                 </Button>
@@ -175,10 +177,15 @@ export function Hero({ data }: HeroProps) {
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-2 animate-bounce">
-          <span className="text-sm text-neutral-500 font-medium">Découvrir</span>
-          <ChevronDown className="w-5 h-5 text-terracotta" />
-        </div>
+        <button
+          onClick={() => scrollToSection('#about')}
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-4 animate-bounce cursor-pointer group"
+        >
+          <span className="text-2xl font-bold text-neutral-600 group-hover:text-terracotta transition-colors">Découvrir</span>
+          <div className="w-16 h-16 rounded-full bg-white/90 backdrop-blur-sm border-2 border-terracotta/40 flex items-center justify-center shadow-lg group-hover:bg-terracotta/10 group-hover:border-terracotta group-hover:shadow-xl transition-all">
+            <ChevronDown className="w-9 h-9 text-terracotta" />
+          </div>
+        </button>
       </div>
     </section>
   )

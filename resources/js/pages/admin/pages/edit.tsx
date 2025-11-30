@@ -98,27 +98,38 @@ export default function PageEdit({ section }: PageEditProps) {
               )}
 
               <div className="space-y-2">
-                <Label htmlFor="title">Titre *</Label>
+                <Label htmlFor="title">
+                  {section.sectionKey === 'hero' ? 'Titre SEO / Alt image *' : 'Titre *'}
+                </Label>
                 <Input
                   id="title"
                   value={data.title}
                   onChange={(e) => setData('title', e.target.value)}
                   required
                 />
+                {section.sectionKey === 'hero' && (
+                  <p className="text-sm text-neutral-500">
+                    Utilisé pour le référencement et le texte alternatif de l'image
+                  </p>
+                )}
                 {errors.title && <InputError message={errors.title} />}
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="content">Contenu *</Label>
+                <Label htmlFor="content">
+                  {section.sectionKey === 'hero' ? 'Sous-titre / Description *' : 'Contenu *'}
+                </Label>
                 <Textarea
                   id="content"
                   value={data.content}
                   onChange={(e) => setData('content', e.target.value)}
-                  rows={8}
+                  rows={section.sectionKey === 'hero' ? 3 : 8}
                   required
                 />
-                <p className="text-sm text-neutral-600">
-                  Utilisez des sauts de ligne pour créer des paragraphes
+                <p className="text-sm text-neutral-500">
+                  {section.sectionKey === 'hero'
+                    ? "Le texte affiché sous le nom \"Marie Jobard Infirmière Puéricultrice\""
+                    : 'Utilisez des sauts de ligne pour créer des paragraphes'}
                 </p>
                 {errors.content && <InputError message={errors.content} />}
               </div>
@@ -137,35 +148,62 @@ export default function PageEdit({ section }: PageEditProps) {
                 {errors.image && <InputError message={errors.image} />}
               </div>
 
-              {section.sectionKey === 'hero' && section.metadata && (
+              {section.sectionKey === 'hero' && (
                 <div className="space-y-4 p-6 bg-gradient-to-r from-cream/50 to-pastel-lavender/20 rounded-xl border border-terracotta/10">
-                  <h3 className="font-semibold text-terracotta-dark">Métadonnées Hero</h3>
+                  <h3 className="font-semibold text-terracotta-dark">Options de la section Hero</h3>
 
                   <div className="space-y-2">
-                    <Label htmlFor="subtitle">Sous-titre</Label>
+                    <Label htmlFor="location">Badge de localisation</Label>
                     <Input
-                      id="subtitle"
-                      value={data.metadata.subtitle || ''}
-                      onChange={(e) => setData('metadata', { ...data.metadata, subtitle: e.target.value })}
+                      id="location"
+                      value={data.metadata.location || ''}
+                      onChange={(e) => setData('metadata', { ...data.metadata, location: e.target.value })}
+                      placeholder="Bordeaux et agglomération"
                     />
+                    <p className="text-sm text-neutral-500">Le texte affiché dans le badge avec l'icône de localisation</p>
                   </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="ctaText">Texte bouton principal</Label>
-                    <Input
-                      id="ctaText"
-                      value={data.metadata.ctaText || ''}
-                      onChange={(e) => setData('metadata', { ...data.metadata, ctaText: e.target.value })}
-                    />
+                  <div className="space-y-3">
+                    <Label>Badges de confiance</Label>
+                    <p className="text-sm text-neutral-500">Les 3 badges affichés sous le sous-titre</p>
+                    {[0, 1, 2].map((index) => (
+                      <Input
+                        key={index}
+                        value={(data.metadata.badges || [])[index]?.text || ''}
+                        onChange={(e) => {
+                          const badges = [...(data.metadata.badges || [
+                            { text: "Diplômée d'État" },
+                            { text: "+5 ans d'expérience" },
+                            { text: "RSAI Certifiée" },
+                          ])]
+                          badges[index] = { text: e.target.value }
+                          setData('metadata', { ...data.metadata, badges })
+                        }}
+                        placeholder={`Badge ${index + 1}`}
+                      />
+                    ))}
                   </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="ctaSecondary">Texte bouton secondaire</Label>
-                    <Input
-                      id="ctaSecondary"
-                      value={data.metadata.ctaSecondary || ''}
-                      onChange={(e) => setData('metadata', { ...data.metadata, ctaSecondary: e.target.value })}
-                    />
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="ctaText">Bouton principal</Label>
+                      <Input
+                        id="ctaText"
+                        value={data.metadata.ctaText || ''}
+                        onChange={(e) => setData('metadata', { ...data.metadata, ctaText: e.target.value })}
+                        placeholder="Découvrir mes services"
+                      />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="ctaSecondary">Bouton secondaire</Label>
+                      <Input
+                        id="ctaSecondary"
+                        value={data.metadata.ctaSecondary || ''}
+                        onChange={(e) => setData('metadata', { ...data.metadata, ctaSecondary: e.target.value })}
+                        placeholder="Me contacter"
+                      />
+                    </div>
                   </div>
                 </div>
               )}

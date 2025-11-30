@@ -76,7 +76,7 @@ export function Rsai({ data }: RsaiProps) {
   const missions: RsaiMission[] = data?.metadata?.missions || defaultMissions
 
   return (
-    <section id="rsai" className="py-24 relative overflow-hidden bg-gradient-to-br from-cream via-pastel-peach/10 to-pastel-lavender/10">
+    <section id="rsai" className="py-24 relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-20 left-10 w-64 h-64 bg-terracotta/10 rounded-full blur-3xl" />
       <div className="absolute bottom-20 right-10 w-72 h-72 bg-pastel-rose/20 rounded-full blur-3xl" />
@@ -175,7 +175,7 @@ export function Rsai({ data }: RsaiProps) {
                   window.scrollTo({ top: offsetPosition, behavior: 'smooth' })
                 }
               }}
-              className="inline-flex items-center gap-2 px-8 py-4 bg-white border-2 border-terracotta text-terracotta-dark hover:bg-terracotta/5 font-bold text-lg rounded-2xl shadow-lg hover:shadow-xl hover:scale-105 transition-all"
+              className="btn-handdrawn inline-flex items-center gap-2 px-8 py-4 bg-white border-2 border-terracotta text-terracotta-dark hover:bg-terracotta hover:text-white font-bold text-lg shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105"
             >
               Voir mes tarifs
             </a>
@@ -191,7 +191,7 @@ export function Rsai({ data }: RsaiProps) {
                   window.scrollTo({ top: offsetPosition, behavior: 'smooth' })
                 }
               }}
-              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-terracotta to-terracotta-dark hover:from-terracotta-dark hover:to-terracotta text-white font-bold text-lg rounded-2xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all"
+              className="btn-handdrawn inline-flex items-center gap-2 px-8 py-4 bg-terracotta hover:bg-terracotta-dark text-white font-bold text-lg shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 border-2 border-terracotta-dark"
             >
               Me contacter
             </a>

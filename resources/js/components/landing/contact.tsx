@@ -222,7 +222,7 @@ export function Contact() {
                 <Button
                   type="submit"
                   disabled={processing}
-                  className="btn-handdrawn w-full bg-gradient-to-r from-terracotta to-terracotta-dark hover:from-terracotta-dark hover:to-terracotta text-white font-bold text-lg py-6"
+                  className="btn-handdrawn w-full bg-terracotta hover:bg-terracotta-dark text-white font-bold text-lg py-6 shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 border-2 border-terracotta-dark"
                   size="lg"
                 >
                   {processing ? 'Envoi en cours...' : 'Envoyer le message'}

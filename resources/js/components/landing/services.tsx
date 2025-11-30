@@ -121,7 +121,7 @@ export function Services({ services }: ServicesProps) {
                           scrollToContact()
                         }}
                         size="sm"
-                        className="w-full rounded-full bg-terracotta hover:bg-terracotta-dark text-white font-semibold text-sm transition-all"
+                        className="btn-handdrawn w-full bg-terracotta hover:bg-terracotta-dark text-white font-bold text-sm shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 border-2 border-terracotta-dark"
                       >
                         Contacter
                       </Button>
@@ -203,14 +203,14 @@ export function Services({ services }: ServicesProps) {
                       setSelectedService(null)
                       scrollToContact()
                     }}
-                    className="btn-handdrawn flex-1 bg-gradient-to-r from-terracotta to-terracotta-dark hover:from-terracotta-dark hover:to-terracotta text-white font-bold"
+                    className="btn-handdrawn flex-1 bg-terracotta hover:bg-terracotta-dark text-white font-bold shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 border-2 border-terracotta-dark"
                   >
                     Prendre rendez-vous
                   </Button>
                   <Button
                     onClick={() => setSelectedService(null)}
                     variant="outline"
-                    className="btn-handdrawn border-2 border-terracotta/40 text-terracotta-dark hover:bg-terracotta hover:text-white font-semibold"
+                    className="btn-handdrawn bg-white border-2 border-terracotta text-terracotta-dark hover:bg-terracotta hover:text-white font-bold shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105"
                   >
                     <X className="w-4 h-4 mr-2" />
                     Fermer

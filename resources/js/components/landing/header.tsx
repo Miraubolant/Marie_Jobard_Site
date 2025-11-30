@@ -114,7 +114,7 @@ export function Header() {
               ))}
               <Button
                 onClick={() => scrollToSection('#contact')}
-                className="btn-handdrawn bg-terracotta hover:bg-terracotta-dark text-white font-bold text-lg py-5 mt-2"
+                className="btn-handdrawn bg-terracotta hover:bg-terracotta-dark text-white font-bold text-lg py-5 mt-2 shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 border-2 border-terracotta-dark"
               >
                 Me contacter
               </Button>
