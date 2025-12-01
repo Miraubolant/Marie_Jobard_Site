@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button'
 import { OptimizedImage } from '@/components/common/optimized-image'
 import type { PageContent } from '@/types/models'
-import { ChevronDown, MapPin, Award, Heart } from 'lucide-react'
+import { MapPin, Award, Heart } from 'lucide-react'
 
 type HeroProps = {
   data: PageContent
@@ -184,17 +184,6 @@ export function Hero({ data }: HeroProps) {
           </div>
         </div>
       </div>
-
-      {/* Scroll Indicator - Outside container for proper centering */}
-      <button
-        onClick={() => scrollToSection('#about')}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-3 animate-bounce cursor-pointer group z-10"
-      >
-        <span className="text-xl font-bold text-neutral-600 group-hover:text-terracotta transition-colors">Découvrir</span>
-        <div className="w-14 h-14 rounded-full bg-white/90 backdrop-blur-sm border-2 border-terracotta/40 flex items-center justify-center shadow-lg group-hover:bg-terracotta/10 group-hover:border-terracotta group-hover:shadow-xl transition-all">
-          <ChevronDown className="w-8 h-8 text-terracotta" />
-        </div>
-      </button>
     </section>
   )
 }
